@@ -40,6 +40,7 @@ export function WidgetForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
 
   function handleRestartFeedback() {
+    setFeedbackSent(false);
     setFeedbackType(null);
   }
 
@@ -47,7 +48,7 @@ export function WidgetForm() {
     <div className="bg-zinc-900 text-white p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">      
       {
         feedbackSent ? (
-          <SuccessStep />
+          <SuccessStep onFeedbackRestartRequested={handleRestartFeedback} />
         ) : (
           <>
             {!feedbackType ? (
@@ -64,7 +65,7 @@ export function WidgetForm() {
       }
 
       <footer className="text-xs text-neutral-400">
-        Feito com ♥ pela <a href="" className="underline underline-offset-2">Rockseat</a>
+        Feito com ♥ pela <a href="" className="underline underline-offset-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500">Rockseat</a>
       </footer>
     </div>
   );
