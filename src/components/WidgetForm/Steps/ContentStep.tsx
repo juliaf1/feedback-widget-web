@@ -26,10 +26,10 @@ export function ContentStep({ feedbackType, onFeedbackRestartRequested, onFeedba
       <header>
         <button
           type="button"
-          className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100"
+          className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500"
           onClick={onFeedbackRestartRequested}
         >
-          <ArrowLeft weight="bold" className="w-4 h-4" />
+          <ArrowLeft weight="bold" className="w-4 h-4 " />
         </button>
 
         <span className="text-xl leading-4 flex items-center gap-2">
