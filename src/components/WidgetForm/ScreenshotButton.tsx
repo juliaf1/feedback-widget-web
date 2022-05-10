@@ -4,11 +4,11 @@ import { useState } from "react";
 import { Loading } from "../Loading";
 
 interface ScreenshotButtonProps {
-  screenshot: string;
-  onScreenshotTaken: (screenshot: string) => void;
+  screenshot: string | null;
+  onScreenshotTaken: (screenshot: string | null) => void;
 }
 
-export function ScreenshotButton({ onScreenshotTaken, screenshot }: ScreenshotButtonProps) {
+export function ScreenshotButton({ screenshot, onScreenshotTaken }: ScreenshotButtonProps) {
   const [isTakingScreenshot, setIsTakingScreenshot] = useState(false);
 
   async function handleTakeScreenshot() {
